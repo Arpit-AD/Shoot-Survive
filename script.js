@@ -7,12 +7,14 @@ const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 const MILLISECONDS_BETWEEN_BOXES = 3000;
 
+
 canvas.width = 650;
 canvas.height = 600;
 
 const bulletcontroller = new bulletController(canvas);
 const player = new Player(canvas.width / 2.2, canvas.height / 1.1, bulletcontroller);
 const boxes = [];
+var gameover = false;
 var randomColor = () => {
     return Math.floor(Math.random() * 16777215).toString(16);
 }
@@ -31,12 +33,16 @@ let startBoxesGenerator = () => {
 
 function gameloop() {
     setCommonStyle();
+    if (gameover) {
+        return;
+    }
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, canvas.width, canvas.height)
     bulletcontroller.draw(ctx);
     player.draw(ctx);
     var z = 1;
     scoreCard.update(ctx, z);
+  
     boxes.forEach(box => {
         
         if (bulletcontroller.collideWith(box)) {
@@ -53,9 +59,7 @@ function gameloop() {
         }
     })
     boxes.forEach(box => {
-        if (player.collideWith(box)) {
-            ctx.clearRect(0,0,canvas.width,canvas.height)
-        }
+        isGameOver(box);
     })
     
     startBoxesGenerator();
@@ -63,6 +67,17 @@ function gameloop() {
     
 }
 
+
+function isGameOver(box) {
+    if (player.collideWith(box)) {
+        gameover = true;
+    }
+    if (gameover) {
+        ctx.fillStyle = "white";
+        ctx.font = "50px Verdana";
+        ctx.fillText("Game Over!", canvas.width / 6.5, canvas.height / 2);
+    }
+}
 function setCommonStyle() {
     ctx.shadowColor = "red";
     // ctx.shadowBlur = 20;
