@@ -63,8 +63,6 @@ function gameloop() {
     })
     
     startBoxesGenerator();
-    
-    
 }
 
 
