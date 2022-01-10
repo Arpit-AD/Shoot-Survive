@@ -10,7 +10,7 @@ body{
 
 h1{
     color: white;
-    font-size: 50px;
+    font-size: 30px;
     font-family: 'Press Start 2P', cursive;
 }
 p{
@@ -20,7 +20,7 @@ p{
 }
 h2, h3{
     color: white;
-    font-size: 25px;
+    font-size: 15px;
     font-family: 'Press Start 2P', cursive;
 }
 .keys{
@@ -31,9 +31,9 @@ h2, h3{
 }
 @media only screen and (max-width: 768px) {
     h1{
-        font-size: 30px;
+        font-size: 20px;
     }
     h2, h3{
-        font-size: 10px;
+        font-size: 8px;
     }
   }

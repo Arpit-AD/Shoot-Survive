@@ -9,7 +9,7 @@ const MILLISECONDS_BETWEEN_BOXES = 3000;
 
 
 canvas.width = 650;
-canvas.height = 600;
+canvas.height = 650;
 
 const bulletcontroller = new bulletController(canvas);
 const player = new Player(canvas.width / 2.2, canvas.height / 1.1, bulletcontroller);
