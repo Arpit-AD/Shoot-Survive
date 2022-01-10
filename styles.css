@@ -3,14 +3,14 @@ body{
     align-items: center;
     flex-direction: column;
     padding: 0;
-    margin: 0;
+    margin-bottom: 50px;
     background-color: rgb(99, 96, 96);
     height: 100vh;
 }
 
 h1{
     color: white;
-    font-size: 30px;
+    font-size: 50px;
     font-family: 'Press Start 2P', cursive;
 }
 p{
@@ -19,10 +19,12 @@ p{
     font-size: 15px;
 }
 h2, h3{
+    text-align: center;
     color: white;
-    font-size: 15px;
+    font-size: 25px;
     font-family: 'Press Start 2P', cursive;
 }
+
 .keys{
     color :darkorange;
 }
@@ -31,9 +33,9 @@ h2, h3{
 }
 @media only screen and (max-width: 768px) {
     h1{
-        font-size: 20px;
+        font-size: 30px;
     }
     h2, h3{
-        font-size: 8px;
+        font-size: 10px;
     }
   }

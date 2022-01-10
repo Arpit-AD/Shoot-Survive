@@ -21,6 +21,4 @@ export default class Score{
         ctx.fillText(this.score, this.x, this.y);
         ctx.fillText("REST AREA", this.x, this.y+300);
     } 
-
-
 }
